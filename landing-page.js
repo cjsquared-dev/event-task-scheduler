@@ -1,4 +1,5 @@
 const table = document.createElement('table');
+table.setAttribute("Id", "myTable");
 
 const headerRow = table.insertRow();
 const header1 = headerRow.insertCell();
@@ -30,3 +31,45 @@ cell5.textContent = 'Row 1, Cell 5';
 cell6.textContent = 'Row 1, Cell 6';
 
 document.getElementById('table-container').appendChild(table);
+
+ function addRow() {
+     const table = document.getElementById('myTable');
+    const dataRow = table.insertRow();
+     const cell1 = dataRow.insertCell();
+    const cell2 = dataRow.insertCell();
+    const cell3 = dataRow.insertCell();
+    const cell4 = dataRow.insertCell();
+   const cell5 = dataRow.insertCell();
+    const cell6 = dataRow.insertCell();
+    cell1.innerHTML = "New Data 1";
+   cell2.innerHTML = "New Data 2";
+}
+
+// let table = document.querySelector('#table');
+// let btn = document.querySelector('#newRowBtn')
+// function newTask() {
+//     const newRow = document.createElement('tr');
+//     const firstCell = document.createElement('td')
+//     const input = document.createElement('input')
+//     input.type = 'text';
+//     input.placeholder = "task name ";
+//     firstCell.appendChild(input);
+//     newRow.appendChild(firstCell);
+//     for (let i = 0; i < 5; i++) {
+//         const buttonCell = document.createElement('td')
+//         const button = document.createElement('button');
+//         button.textContent = `button ${i}`;
+//         buttonCell.appendChild(button);
+//         newRow.appendChild(buttonCell)
+//     }
+//     table.appendChild(newRow)
+// }
+// btn.addEventListener('click', newTask)
+
+
+
+
+
+
+
+
