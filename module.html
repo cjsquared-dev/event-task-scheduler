@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="rest.css">
   </head>
-  <body></body>
+  <body>
+    <button class="btn-open">Sign Up</button>
+
+    <section class="overlay modal modal-hidden">
+    
+      <section class="modal-content-hidden">
+        <p>Volunteer Info</p>
+          <form class="w-96">
+            <label for="fname">Name:</label>
+            <input type="text" class="input w-full p-1" name="fname"><br><br>
+            <label for="lname">Number:</label>
+            <input type="text" class="input w-full p-1" name="lname"><br><br>
+            <label for="fname">Email</label>
+            <input type="text" class="input w-full p-1" name="fname"><br><br>
+            <label for="fname">Color</label>
+ 	           <select name="color" id="color-selector">
+              	<option value="#0000FF">Blue</option>
+              	<option value="#004225">Forrest Green</option>
+                <option value="#006B3C">Green</option>
+                <option value="#800020">Burgundy</option>
+              	<option value="#FF0000">Red</option>
+                <option value="#9C2542">Ruby</option>
+                <option value="#FF91AF">Pink</option>
+                <option value="#DE5D83">Blush</option>
+                <option value="#FFAA1D">Yellow</option>    	
+                <option value="#6A0DAD">Purple</option>    	
+                <option value="#ED9121">Orange</option>
+                <option value="#CC5500">Rust</option>
+                <option value="#87421F">Brown</option>    	
+                <option value="#B284BE">Violet</option>
+	          	  <option value="#00FFFF">Aqua</option>
+                <option value="#D0FF14">Lime</option>
+                <option value="#B2BEB5">Gray</option>
+              </select>
+              <br><br>
+              <button class="btn-close">Submit</button>
+          </form>
+
+      </section>
+    </section>
+  <script scr="module.js"></script>
+  </body>
 </html>

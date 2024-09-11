@@ -1,0 +1,91 @@
+/* this will have uniform styling for all elements */
+* {
+    margin: 0;
+    Padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.modal-content-hidden {
+    display: flex;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 80%;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.modal-content-hidden label {
+    font-size: 15px;
+    display: block;
+
+}
+
+.modal-content-hidden p {
+    display: flex;
+    flex-direction: center;
+    font-size: 1.5rem;
+    color: #777;
+    margin: 0.5rem 0 0.2rem;
+}
+
+.modal-hidden{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 450px;
+    padding: 1.3rem;
+    position: absolute;
+    top: 20%;
+    background-color: white;
+}
+
+.input {
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+}
+
+#color-selector {
+    padding: 1px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+  
+.btn-open {
+    position: absolute;
+    bottom: 150px;
+    cursor: pointer;
+  }
+  
+.btn-close {
+    transform: translate(10px);
+    padding: 0.5rem 0.7rem;
+    border-top: 15px;
+    background: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
