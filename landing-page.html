@@ -1,73 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Scheduler</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./rest.css"/>
-  </head>
-  <body>
 
-    <table>
-      <tr>
-        <th colspan="6">Time Slots</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th>8:00 AM - 10:00 AM</th>
-        <th>10:00 AM - 12:00 PM</th>
-        <th>12:00 PM - 2:00 PM</th>
-        <th>2:00 PM - 4:00 PM</th>
-        <th>4:00 PM  - 6:00 PM</th>
-      </tr>
-      <tr>
-        <td class="task">Task 1</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <!-- <tr>
-        <td class="task">Task 2</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="task">Task 3</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="task">Task 4</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="task">Task 5</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Scheduler</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./rest.css" />
+</head>
 
-    <br>
-    
-    <div id="table-container"></div>
-    <script src="landing-page.js"></script>
-    <button id="newRowBtn" onclick="addRow()">Add New Task</button>
-    
-  </body>
+<body>
+
+  <table id="table">
+    <tr>
+      <th colspan="6">Time Slots</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>8:00 AM - 10:00 AM</th>
+      <th>10:00 AM - 12:00 PM</th>
+      <th>12:00 PM - 2:00 PM</th>
+      <th>2:00 PM - 4:00 PM</th>
+      <th>4:00 PM - 6:00 PM</th>
+    </tr>
+  </table>
+  <button id="newRowBtn">Add New Task</button>
+
+  <script src="landing-page.js"></script>
+</body>
+
+
 </html>

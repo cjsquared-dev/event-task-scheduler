@@ -1,70 +1,27 @@
-const table = document.createElement('table');
-table.setAttribute("Id", "myTable");
 
-const headerRow = table.insertRow();
-const header1 = headerRow.insertCell();
-const header2 = headerRow.insertCell();
-const header3 = headerRow.insertCell();
-const header4 = headerRow.insertCell();
-const header5 = headerRow.insertCell();
-const header6 = headerRow.insertCell();
-header1.textContent = '';
-header2.textContent = '8:00 AM - 10:00 AM';
-header3.textContent = '10:00 AM - 12:00 PM';
-header4.textContent = '12:00 PM - 2:00 PM';
-header5.textContent = '2:00 PM - 4:00 PM';
-header6.textContent = '4:00 PM  - 6:00 PM';
+let table = document.querySelector('#table');
+let btn = document.querySelector('#newRowBtn')
 
 
-const dataRow = table.insertRow();
-const cell1 = dataRow.insertCell();
-const cell2 = dataRow.insertCell();
-const cell3 = dataRow.insertCell();
-const cell4 = dataRow.insertCell();
-const cell5 = dataRow.insertCell();
-const cell6 = dataRow.insertCell();
-cell1.textContent = 'Row 1, Cell 1';
-cell2.textContent = 'Row 1, Cell 2';
-cell3.textContent = 'Row 1, Cell 3';
-cell4.textContent = 'Row 1, Cell 4';
-cell5.textContent = 'Row 1, Cell 5';
-cell6.textContent = 'Row 1, Cell 6';
-
-document.getElementById('table-container').appendChild(table);
-
- function addRow() {
-     const table = document.getElementById('myTable');
-    const dataRow = table.insertRow();
-     const cell1 = dataRow.insertCell();
-    const cell2 = dataRow.insertCell();
-    const cell3 = dataRow.insertCell();
-    const cell4 = dataRow.insertCell();
-   const cell5 = dataRow.insertCell();
-    const cell6 = dataRow.insertCell();
-    cell1.innerHTML = "New Data 1";
-   cell2.innerHTML = "New Data 2";
+//Function to create a new row upon clicking  and input new tasks with clickable buttons inside cells
+function newTask() {
+    const newRow = document.createElement('tr');
+    const firstCell = document.createElement('td')
+    const input = document.createElement('input')
+    input.type = 'text';
+    input.placeholder = "task name ";
+    firstCell.appendChild(input);
+    newRow.appendChild(firstCell);
+    for (let i = 0; i < 5; i++) {
+        const buttonCell = document.createElement('td')
+        const button = document.createElement('button');
+        button.textContent = `button ${i}`;
+        buttonCell.appendChild(button);
+        newRow.appendChild(buttonCell)
+    }
+    table.appendChild(newRow)
 }
-
-// let table = document.querySelector('#table');
-// let btn = document.querySelector('#newRowBtn')
-// function newTask() {
-//     const newRow = document.createElement('tr');
-//     const firstCell = document.createElement('td')
-//     const input = document.createElement('input')
-//     input.type = 'text';
-//     input.placeholder = "task name ";
-//     firstCell.appendChild(input);
-//     newRow.appendChild(firstCell);
-//     for (let i = 0; i < 5; i++) {
-//         const buttonCell = document.createElement('td')
-//         const button = document.createElement('button');
-//         button.textContent = `button ${i}`;
-//         buttonCell.appendChild(button);
-//         newRow.appendChild(buttonCell)
-//     }
-//     table.appendChild(newRow)
-// }
-// btn.addEventListener('click', newTask)
+btn.addEventListener('click', newTask)
 
 
 
