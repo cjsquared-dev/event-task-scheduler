@@ -3,40 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Scheduler</title>
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="./modal.js" type="text/javascript"></script>
-    <script defer src="./planner.js" type="text/javascript"></script>
-
     <link rel="stylesheet" type="text/css" href="rest.css" />
     <link rel="stylesheet" href="modal.css" />
   </head>
-
   <body>
-    <table id="table">
-      <tr>
-        <th colspan="6">Time Slots</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th>8:00 AM - 10:00 AM</th>
-        <th>10:00 AM - 12:00 PM</th>
-        <th>12:00 PM - 2:00 PM</th>
-        <th>2:00 PM - 4:00 PM</th>
-        <th>4:00 PM - 6:00 PM</th>
-      </tr>
-    </table>
+    <button class="btn-open">Sign Up</button>
 
-    <button id="newRowBtn">Add New Task</button>
-    <section id="modal" class="overlay modal modal-hidden hidden">
+    <section class="overlay modal modal-hidden">
       <section class="modal-content-hidden w-4/5">
     
       <section>
         <p class="pb-1">Volunteer Info</p>
         <form class="w-96">
-          <label for="fname">Name:</label>
+          <label for="name">Name:</label>
           <input type="text" class="input w-1/2 p-1" id="name"><br><br>
-          <label for="lname">Number:</label>
+          <label for="number">Number:</label>
           <input type="text" class="input w-1/2 p-1" id="number"><br><br>
           <label for="email">Email</label>
           <input type="text" class="input w-1/2 p-1" id="email"><br><br>
@@ -48,10 +31,9 @@
           
         <section id="button-container"></section>
         <button id="submit-button">Submit</button>
-        <button id="cancel-button">Cancel</button>
       </section>  
     </section>
     </section>
-
+  <script src="modal.js"></script>
   </body>
 </html>
