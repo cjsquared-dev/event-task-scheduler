@@ -1,7 +1,7 @@
 # Event-Scheduler
 
 ## Description
-Event Scheduler allows users to manage their  organized events by adding volunteers or employees to the users personal schedule.
+Event Scheduler allows users to manage their organized events by adding volunteers or employees to the user's personal schedule.
 
 ## Features
 - Option to add new roles into the users event
@@ -9,10 +9,10 @@ Event Scheduler allows users to manage their  organized events by adding volunte
 
 ## Usage
 To get started:
- 1. add a new event task and give it a personilezed name 
- 2. add a volunteer/employee to a time slot
+ 1. add a new event task and give it a personalized name 
+ 2. assign a volunteer or employee to a time slot
  
- ## Contributers
+ ## Contributors
  - Chris Johnson
  - Tyanne Jensen
  - David Garcia
