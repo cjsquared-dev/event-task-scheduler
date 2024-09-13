@@ -6,6 +6,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
+
 .modal-content-hidden {
     display: flex;
     background-color: #fefefe;
@@ -23,6 +25,7 @@
     display: block;
 
 }
+
 
 .modal-content-hidden p {
     display: flex;
@@ -52,19 +55,17 @@
 
 }
 
-#color-selector {
+#color-selector-button {
     padding: 1px;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    /* border: 1px solid #000000; */
+    /* border-radius: 5px; */
 }
-  
-.btn-open {
-    position: absolute;
-    bottom: 150px;
-    cursor: pointer;
-  }
-  
-.btn-close {
+
+#sign-up-button {
+
+}
+
+#submit-button {
     transform: translate(10px);
     padding: 0.5rem 0.7rem;
     border-top: 15px;
