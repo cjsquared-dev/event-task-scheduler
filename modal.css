@@ -55,24 +55,37 @@
 
 }
 
-#color-selector-button {
-    padding: 1px;
-    /* border: 1px solid #000000; */
-    /* border-radius: 5px; */
-}
-
-#sign-up-button {
-
+.button-style {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 #submit-button {
-    transform: translate(10px);
+    transform: translate(20px);
+    margin-top: 10px;
     padding: 0.5rem 0.7rem;
-    border-top: 15px;
-    background: #eee;
+    background: rgb(22 163 74);
+    border: 2px, solid, rgb(22 163 74);
     border-radius: 5px;
     cursor: pointer;
-  }
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(230, 253, 238);
+}
+
+#cancel-button {
+    transform: translate(20px);
+    margin-top: 10px;
+    padding: 0.5rem 0.7rem;
+    background: rgb(230, 253, 238);
+    border: 2px solid rgb(22 163 74);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(22 163 74);
+}
 
 .overlay {
   position: fixed;
