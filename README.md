@@ -1,16 +1,32 @@
-# Event-Scheduler
+# Event-Task-Scheduler 📅
 
 ## Description
 Event Scheduler allows users to manage their organized events by adding volunteers or employees to the user's personal schedule.
 
+## Website Link
+https://jacobbaqleh1.github.io/event-scheduler/
+
 ## Features
-- Option to add new roles into the users event
+- Add unlimited amount of tasks into the schedule
 - Color cordination for the volunteers/employees
+
+## Technologies Used
+- HTML
+- TailwindCSS
+- Javascript
+
+## Screenshots
+![screenshot](image.png)
 
 ## Usage
 To get started:
- 1. add a new event task and give it a personalized name 
- 2. assign a volunteer or employee to a time slot
+ 1. Add a new event task and give it a personalized name 
+ - Click on "Add new task"
+ - Enter a personalized task name
+ 2. Assign a volunteer or employee to a time slot.
+ - Select a time slot 
+ - Enter a name
+ - Apply a color to easily identify roles 
  
  ## Contributors
  - Chris Johnson
