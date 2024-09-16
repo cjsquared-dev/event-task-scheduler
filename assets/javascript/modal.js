@@ -217,7 +217,7 @@ submitButton.addEventListener('click', function () {
     // updateTable();
     buttonElement = document.querySelectorAll([`[data-index='${cellData.time + cellData.taskIndex}']`])[0];
     buttonElement.textContent = cellData.name;
-    buttonElement.style.backgroundColor = cellData.color;
+    buttonElement.parentNode.style.backgroundColor = cellData.color;
     const colorButton = document.querySelector(`[data-color='${cellData.color}']`);
     let usedColors = JSON.parse(localStorage.getItem('usedColors'));
     if (!usedColors) {

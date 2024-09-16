@@ -46,12 +46,15 @@ function generateTableHtml(targetTableElement) {
                     console.log(buttonData.name)
                     button.dataset.index = JSON.stringify(i) + row.dataset.index;
                     button.textContent = buttonData.name
-                    button.style.backgroundColor = buttonData.color
+                    buttonCell.appendChild(button);
+                    button.parentElement.style.backgroundColor = buttonData.color
                 } else {
+                    buttonCell.appendChild(button);
                     button.textContent = `button ${i}`;
                 }
+                buttonCell.classList.add('button-cell');
                 button.addEventListener ('click', (event) => openModal(i, JSON.parse(row.dataset.index), event));
-                buttonCell.appendChild(button);
+
                 row.appendChild(buttonCell)
                 targetTableElement.appendChild(row)
             }
@@ -76,6 +79,7 @@ function newTask(index) {
     firstCell.appendChild(input);
     row.appendChild(firstCell);
     for (let i = 0; i < 6; i++) {
+        const buttonCell = document.createElement('td')
         if (i === 5) {
             const deleteIcon = document.createElement('span');
             deleteIcon.addEventListener('click', () => deleteTaskAndRowData(6, row.dataset.index))
@@ -86,7 +90,6 @@ function newTask(index) {
             row.appendChild(deleteIconCell)
             tableElement.appendChild(row)
         } else {
-            const buttonCell = document.createElement('td')
             const button = document.createElement('button');
             button.classList.add('time-button')
             button.addEventListener ('click', (event) => openModal(i, JSON.parse(row.dataset.index), event));
@@ -94,6 +97,7 @@ function newTask(index) {
             buttonCell.appendChild(button);
             row.appendChild(buttonCell);
         }
+        buttonCell.classList.add('button-cell');
     }
     tableElement.appendChild(row)
     taskIndex++

@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Scheduler</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="./modal.js" type="text/javascript"></script>
-    <script defer src="./planner.js" type="text/javascript"></script>
+    <script defer src="./assets/javascript/modal.js" type="text/javascript"></script>
+    <script defer src="./assets/javascript/planner.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" type="text/css" href="rest.css" />
-    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/rest.css" />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
   </head>
 
   <body>
+    <section class="h-screen w-screen hero-container flex justify-center items-center	">
+      <section class="h-2/5	w-6/12 rounded-md hero-content-container flex justify-evenly items-center flex-col">
+        <h1 class="text-white text-4xl text-center">Welcome to the Event Scheduler</h1>
+        <h3 class="text-white text-3xl text-center">Here to make your scheduling needs a breeze!</h3>
+      </section>
+    </section>
     <div id="table-container">
     <table id="table">
       <tr>
-        <th id="time-slots" colspan="6">Time Slots</th>
+        <th id="time-slots" colspan="6">Event Name Goes Here</th>
       </tr>
       <tr>
         <th id="task-header">Tasks</th>
@@ -35,9 +41,9 @@
       <section>
         <p class="pb-1">Volunteer Info</p>
         <form class="w-96">
-          <label for="fname">Name:</label>
+          <label for="name">Name:</label>
           <input type="text" class="input w-1/2 p-1" id="name"><br><br>
-          <label for="lname">Number:</label>
+          <label for="number">Number:</label>
           <input type="text" class="input w-1/2 p-1" id="number"><br><br>
           <label for="email">Email</label>
           <input type="text" class="input w-1/2 p-1" id="email"><br><br>
