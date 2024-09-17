@@ -16,7 +16,8 @@ https://jacobbaqleh1.github.io/event-scheduler/
 - Javascript
 
 ## Screenshots
-![screenshot](screenshot.png)
+![alt text](assets/photos/image.png)
+![alt text](assets/photos/image-1.png)
 
 ## Usage
 To get started:
