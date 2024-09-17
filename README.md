@@ -4,7 +4,7 @@
 Event Scheduler allows users to manage their organized events by adding volunteers or employees to the user's personal schedule.
 
 ## Website Link
-[https://jacobbaqleh1.github.io/event-scheduler/](https://jacobbaqleh1.github.io/event-task-scheduler/)
+[https://jacobbaqleh1.github.io/event-task-scheduler/](https://jacobbaqleh1.github.io/event-task-scheduler/)
 
 ## Features
 - Add unlimited amount of tasks into the schedule
@@ -12,6 +12,7 @@ Event Scheduler allows users to manage their organized events by adding voluntee
 
 ## Technologies Used
 - HTML
+- CSS
 - TailwindCSS
 - Javascript
 
