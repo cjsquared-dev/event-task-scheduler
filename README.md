@@ -12,6 +12,7 @@ Event Scheduler allows users to manage their organized events by adding voluntee
 
 ## Technologies Used
 - HTML
+- CSS
 - TailwindCSS
 - Javascript
 
