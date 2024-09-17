@@ -165,13 +165,11 @@ for (let i = 0; i < colors.length; i++) {
     buttonElement.classList.add('button-style')
     buttonElement.textContent = colors[i].label;
     buttonElement.addEventListener('click', function () {
-        console.log('The color chosen is ' + colors[i].label);
         colorSelected = colors[i]   
         });
         buttonContainerElement.append(buttonElement);
     }
     hex = null;
-    console.log(hex);
 }
 
 // add event listener to submit button
@@ -180,9 +178,6 @@ cancelButton.addEventListener('click', function () {
 })
 
 submitButton.addEventListener('click', function () {
-    console.log('Submit button was pressed.')
-
-    console.log(nameInputElement.value);
     if (!nameInputElement.value || !numberInputElement.value || !emailInputElement.value || !colorSelected) {
         if (!document.getElementById ('error-message')) {
             const errorElement = document.createElement('p');
@@ -190,7 +185,6 @@ submitButton.addEventListener('click', function () {
             rightColumnElement.append(errorElement);
             // errorElement.classList.add('error-message');
             errorElement.id = 'error-message';
-            console.log(errorElement);
         } 
         return;
     } else { 
@@ -228,7 +222,6 @@ submitButton.addEventListener('click', function () {
         label: cellData.colorLabel,
     }
     localStorage.setItem('usedColors', JSON.stringify(usedColors));
-    console.log(colorButton);
     colorButton.remove();
 })
 
@@ -242,7 +235,6 @@ function openModal (time, taskIndex, event) {
 
 function updateInputIfDataForSelectedCell(time, taskIndex) {
     const modalData = getTaskTimeDataFromLocalStorage(time, taskIndex);
-    console.log(modalData);
     if (modalData) {
         nameInputElement.value = modalData.name;
         numberInputElement.value = modalData.number;
@@ -252,7 +244,6 @@ function updateInputIfDataForSelectedCell(time, taskIndex) {
         numberInputElement.value = '';
         emailInputElement.value = '';
     }
-
 }
 
 function getTaskTimeDataFromLocalStorage(time, taskIndex) {
@@ -283,7 +274,6 @@ function addOrUpdateNewTask(key, task) {
     //     tasks[key] = task
     // }
     tasks[key] = task;
-    console.log(tasks);
     const stringifyTasks = JSON.stringify(tasks);
     localStorage.setItem('tasks', stringifyTasks);
 }
@@ -293,8 +283,6 @@ function deleteTaskAndRowData(columns, taskIndex) {
         const key = JSON.stringify(i) + taskIndex;
         const usedColors = JSON.parse(localStorage.getItem('usedColors'));
         let usedColor = usedColors[key];
-        console.log(usedColor);
-        console.log(key);
         if (usedColor) {
             const colorButtonElement = document.createElement('button');
             colorButtonElement.dataset.color = usedColor.hex;
@@ -302,7 +290,6 @@ function deleteTaskAndRowData(columns, taskIndex) {
             colorButtonElement.classList.add('button-style')
             colorButtonElement.textContent = usedColor.label;
             colorButtonElement.addEventListener('click', function () {
-                console.log('The color chosen is ' + usedColor.label);
                 colorSelected = colors[i]   
             });
             buttonContainerElement.append(colorButtonElement);
