@@ -3,7 +3,9 @@ let tableElement = document.querySelector('#table');
 let newRowButtonElement = document.querySelector('#newRowBtn');
 let tasks = getTasks();
 let taskIndex = Object.keys(tasks).length;
-let darkMode = false;
+let isDarkMode = localStorage.getItem('darkMode') === 'true';
+let toggleButton = document.getElementById('toggleButton');
+let body = document.body;
 
 // populate the data for the tasks
 generateTableHtml(tableElement);
@@ -106,10 +108,29 @@ function newTask(index) {
 // needto create a delete function for the row that will be deleted
 newRowButtonElement.addEventListener('click', () => newTask(taskIndex))
 
+//light/dark mode styles for the planner
 
+if (isDarkMode) {
+    enableDarkMode();
+  }
 
+toggleButton.addEventListener('click', function () {
+if (body.classList.contains('dark')) {
+    enableLightMode();
+} else {
+    enableDarkMode();
+}
 
+});
 
+function enableDarkMode() {
+    body.classList.add('dark');
+    localStorage.setItem('darkMode', 'true');
+}
 
+function enableLightMode() {
+    body.classList.remove('dark')
+    localStorage.setItem('darkMode', 'false');
 
+}
 
