@@ -7,13 +7,16 @@ let isDarkMode = localStorage.getItem('darkMode') === 'true';
 let toggleButton = document.getElementById('toggleButton');
 let body = document.body;
 
-// populate the data for the tasks
 generateTableHtml(tableElement);
+
+// populate the data for the tasks in the table
 
 function generateTableHtml(targetTableElement) {
     let index = 0;
     for (const key in tasks) {
-        console.log(`${key}: ${tasks[key]}`);
+
+// creating table elements for each task
+
         const row = document.createElement('tr');
         const firstCell = document.createElement('td');
         const input = document.createElement('input');
@@ -25,10 +28,16 @@ function generateTableHtml(targetTableElement) {
             addOrUpdateNewTask(key, event.target.value)
             console.log(event.target.value, taskIndex);
         })
+
+// appends the input task data into the cells
+
         firstCell.appendChild(input);
         row.appendChild(firstCell);
+
         for (let i = 0; i < 6; i++) {
-            console.log(i)
+
+// if index is equal to 5, which is the last column in the table, add a delete icon, instead of a normal cell button.
+
             if (i === 5) {
                 const deleteIcon = document.createElement('span');
                 deleteIcon.addEventListener('click', () => deleteTaskAndRowData(6, row.dataset.index))
@@ -38,19 +47,26 @@ function generateTableHtml(targetTableElement) {
                 deleteIconCell.appendChild(deleteIcon);
                 row.appendChild(deleteIconCell)
                 targetTableElement.appendChild(row)
+
+// add a cell button, with an event listener, to open the modal and populate the cell button with data, if the data exists in local storage
+
             } else {
                 const buttonData = getTaskTimeDataFromLocalStorage(i, row.dataset.index);
-                console.log(buttonData);
                 const buttonCell = document.createElement('td')
                 const button = document.createElement('button');
                 button.classList.add('time-button')
+
+// populates cell data, if data exists in local storage
+
                 if (buttonData) {
-                    console.log(buttonData.name)
                     button.dataset.index = JSON.stringify(i) + row.dataset.index;
                     button.textContent = buttonData.name
                     buttonCell.appendChild(button);
                     button.parentElement.style.backgroundColor = buttonData.color
                 } else {
+
+// if cell data doesn't exist, populate the button with a label of button + column count
+
                     buttonCell.appendChild(button);
                     button.textContent = `button ${i}`;
                 }
@@ -65,7 +81,8 @@ function generateTableHtml(targetTableElement) {
     }
 }
 
-//Function to create a new row upon clicking  and input new tasks with clickable buttons inside cells
+// this function creates a new row upon clicking the add new task button
+
 function newTask(index) {
     const row = document.createElement('tr');
     row.dataset.index = taskIndex;
@@ -74,14 +91,21 @@ function newTask(index) {
     input.dataset.row = index;
     input.type = 'text';
     input.placeholder = "task name ";
+
+// also, adds an event listener that saves the input data upon pressing any key, and then appends it to the table
+
     input.addEventListener('keydown', function(event) {
         addOrUpdateNewTask(row.dataset.index, event.target.value)
-        console.log(event.target.value, index);
     })
     firstCell.appendChild(input);
     row.appendChild(firstCell);
+
+    
     for (let i = 0; i < 6; i++) {
         const buttonCell = document.createElement('td')
+
+// if index is equal to 5, which is the last column in the table, add a delete icon, instead of a normal cell button
+
         if (i === 5) {
             const deleteIcon = document.createElement('span');
             deleteIcon.addEventListener('click', () => deleteTaskAndRowData(6, row.dataset.index))
@@ -91,6 +115,9 @@ function newTask(index) {
             deleteIconCell.appendChild(deleteIcon);
             row.appendChild(deleteIconCell)
             tableElement.appendChild(row)
+
+// add a cell button, with an event listener, to open the modal with no pre-existing data from local storage.
+
         } else {
             const button = document.createElement('button');
             button.classList.add('time-button')
@@ -101,11 +128,15 @@ function newTask(index) {
         }
         buttonCell.classList.add('button-cell');
     }
+
+// appends the new row to the table
+
     tableElement.appendChild(row)
     taskIndex++
 }
 
-// needto create a delete function for the row that will be deleted
+// adds an event listener to the add new task button, to call the function of new task.
+
 newRowButtonElement.addEventListener('click', () => newTask(taskIndex))
 
 //light/dark mode styles for the planner

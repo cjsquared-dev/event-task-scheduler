@@ -145,11 +145,15 @@ let cellData = null;
 let currentColorSelected = null;
 
 
-// add function to add buttonts to the modal
+// this function adds the color buttons to the modal by storing the array of objects in code, to append to the modal.
+
 for (let i = 0; i < colors.length; i++) {
     const usedColors = JSON.parse(localStorage.getItem('usedColors'));
     let hex = null;
     let colorAlreadyUsed = false;
+
+// checks to see if color is already used, and if not, then it will add the color button to the button container in the modal
+
     for (let usedColorKey in usedColors) {
         if (usedColors[usedColorKey]) {
             hex = usedColors[usedColorKey].hex;
@@ -172,10 +176,13 @@ for (let i = 0; i < colors.length; i++) {
     hex = null;
 }
 
-// add event listener to submit button
+// adds an event listener to the cancel button, if clicked, closes the modal
+
 cancelButton.addEventListener('click', function () {
     modalElement.classList.add('hidden');
 })
+
+// adds an event listener to the submit button, when clicked, it checks to make sure that data is input in all fields, if not, it displays an error message
 
 submitButton.addEventListener('click', function () {
     if (!nameInputElement.value || !numberInputElement.value || !emailInputElement.value || !colorSelected) {
@@ -183,10 +190,12 @@ submitButton.addEventListener('click', function () {
             const errorElement = document.createElement('p');
             errorElement.textContent = 'All fields need to be completed.';
             rightColumnElement.append(errorElement);
-            // errorElement.classList.add('error-message');
             errorElement.id = 'error-message';
         } 
         return;
+
+// however, if there is information in all inputs, it removes the error message, and stores all of the information in local storage       
+
     } else { 
         let errorElement = document.getElementById('error-message');
         if (errorElement) {
@@ -208,7 +217,10 @@ submitButton.addEventListener('click', function () {
     colorSelected = null;
     modalElement.classList.add('hidden');
     setTaskTimeDataToLocalStorage();
-    // updateTable();
+
+// It then adds the Name to the button on the Table, and stores the rest of the information in local storage so that if needed, when you click on that button on the table, it will 
+// populate all of the information into the given fields. It also removes the color chosen from the list of colors to choose from.  
+
     buttonElement = document.querySelectorAll([`[data-index='${cellData.time + cellData.taskIndex}']`])[0];
     buttonElement.textContent = cellData.name;
     buttonElement.parentNode.style.backgroundColor = cellData.color;
@@ -225,6 +237,9 @@ submitButton.addEventListener('click', function () {
     colorButton.remove();
 })
 
+// this function opens the modal, and sets the data-index for that given cell, it also removes the 'hidden' class from html and displays the modal, and 
+// calls the method updateInputIfDataForSelectedCell
+
 function openModal (time, taskIndex, event) {
     currentTime = JSON.stringify(time);
     currentTaskIndex = JSON.stringify(taskIndex);
@@ -232,6 +247,8 @@ function openModal (time, taskIndex, event) {
     modalElement.classList.remove('hidden');
     updateInputIfDataForSelectedCell(time, taskIndex);
 }
+
+//it updates inputs and populates the inputs with the data from local storage, based on the x/y of the table
 
 function updateInputIfDataForSelectedCell(time, taskIndex) {
     const modalData = getTaskTimeDataFromLocalStorage(time, taskIndex);
@@ -246,19 +263,24 @@ function updateInputIfDataForSelectedCell(time, taskIndex) {
     }
 }
 
+// this function gets the task and the time data from local storage, 
+
 function getTaskTimeDataFromLocalStorage(time, taskIndex) {
     const key = JSON.stringify(time) + taskIndex ;
     const data = JSON.parse(localStorage.getItem(key));
     return(data);
 }
 
+// this function sets the task and time data into local storage
+
 function setTaskTimeDataToLocalStorage() {
     const key = cellData.time + cellData.taskIndex;
     localStorage.setItem(key, JSON.stringify(cellData));
 }
 
-function getTasks() {
 // get tasks from local storage and parse them into an array of strings
+
+function getTasks() {
     const key = 'tasks';
     let tasks = {}
     const localStorageTasks = JSON.parse(localStorage.getItem(key))
@@ -267,16 +289,17 @@ function getTasks() {
     }
     return(tasks)
 }
-function addOrUpdateNewTask(key, task) {
+
 // get current tasks, append new task, stringify, and then set to local storage
+
+function addOrUpdateNewTask(key, task) {
     let tasks = getTasks();
-    // if (!tasks[key]) {
-    //     tasks[key] = task
-    // }
     tasks[key] = task;
     const stringifyTasks = JSON.stringify(tasks);
     localStorage.setItem('tasks', stringifyTasks);
 }
+
+// this function deletes the information from the table and from local storage, when the trash can button is clicked
 
 function deleteTaskAndRowData(columns, taskIndex) {
     for (let i = 0; i < columns; i++) {
@@ -308,6 +331,8 @@ function deleteTaskAndRowData(columns, taskIndex) {
     rowElement.remove();
 }
 
+// this function dynamically changes the key, so that when a task is deleted, it still works properly.
+
 function remapTasksObject(tasks) {
     const orderedTasks = {};
     let index = 0;
@@ -317,23 +342,3 @@ function remapTasksObject(tasks) {
     }
     return orderedTasks;
 }
-// needto create a delete function for local storage
-
-
-
-
-
-
-
-
-// we need a function that dynamically renders the individual person button for each cell
-// create a function that displays the modal that displays already existing information for the person button
-// create an event listener for each cell in the table which calls the function get data for person, if person exists, and render the data.
-
-
-
-// create a delete button and function that deletes the Task if needed.
-
-// Add Styling
-// delete button for row and local storage
-// replace the html with an updated version
