@@ -32,8 +32,16 @@ td {
     justify-content: center;
 }
 .hero-container {
-    background: url('../photos/herobanner.jpg');
+    background: url('../photos/herobanner.jpg') no-repeat center center; /* Ensure the image is centered */
+    background-size: contain; /* Scale the image to fit within the container */
+    height: 100px; /* Adjust the height to make the container smaller */
+    width: 100%; /* Keep it full width */
+    margin: 0 auto; /* Center the container */
+    height: 50vh;
+
+    
 }
+
 
 .hero-content-container {
     background-color: rgba(0,0,0,0.4);
@@ -123,6 +131,7 @@ td {
         width: 80%;
     }
 
+
 }
 
 * {
@@ -146,3 +155,11 @@ td {
     color: var(--dark);
     padding-bottom: 50px;
   }
+
+  .time-button:hover {
+    background-color: #007BFF; /* Change to your desired hover color */
+    color: white; /* Change text color */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+

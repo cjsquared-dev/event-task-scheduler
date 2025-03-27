@@ -122,7 +122,7 @@ function newTask(index) {
             const button = document.createElement('button');
             button.classList.add('time-button')
             button.addEventListener ('click', (event) => openModal(i, JSON.parse(row.dataset.index), event));
-            button.textContent = `button ${i}`;
+            button.textContent = `Click Here to Assign Volunteer`;
             buttonCell.appendChild(button);
             row.appendChild(buttonCell);
         }
